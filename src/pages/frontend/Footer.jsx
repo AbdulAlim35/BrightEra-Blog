@@ -60,7 +60,7 @@ function Footer() {
               <li>
                 <Link
                   onClick={() => window.scrollTo(0, 0)}
-                  to="/home/about"
+                  to="/about"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   About Us
@@ -69,7 +69,7 @@ function Footer() {
               <li>
                 <Link
                   onClick={() => window.scrollTo(0, 0)}
-                  to="/home/contact"
+                  to="/contact"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Contact
@@ -84,7 +84,7 @@ function Footer() {
               <li>
                 <Link
                   onClick={() => window.scrollTo(0, 0)}
-                  to="/home/nev/technology"
+                  to="/nev/technology"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Technology
@@ -93,7 +93,7 @@ function Footer() {
               <li>
                 <Link
                   onClick={() => window.scrollTo(0, 0)}
-                  to="/home/nev/business"
+                  to="/nev/business"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Business
@@ -102,7 +102,7 @@ function Footer() {
               <li>
                 <Link
                   onClick={() => window.scrollTo(0, 0)}
-                  to="/home/nev/design"
+                  to="/nev/design"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Design
@@ -111,7 +111,7 @@ function Footer() {
               <li>
                 <Link
                   onClick={() => window.scrollTo(0, 0)}
-                  to="/home/nev/development"
+                  to="/nev/development"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Development
@@ -119,7 +119,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/home/nev/marketing"
+                  to="/nev/marketing"
                   onClick={() => window.scrollTo(0, 0)}
                   className="text-gray-300 hover:text-white transition-colors"
                 >

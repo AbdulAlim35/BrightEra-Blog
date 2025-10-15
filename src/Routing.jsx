@@ -34,7 +34,21 @@ import GetInTouch from "./pages/GetInTouch";
 export default function Routing() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+
+<Route path="/" element={<FrontendLayout />}>
+        <Route index element={<MainContent />}/>
+        <Route path="show/:id" element={<BlogPage />}/>
+        <Route path="header" element={<Header />} />
+        <Route path="footer" element={<Footer />} />
+        <Route path="all" element={<AllArticles />} />
+        <Route path="nev/:category" element={<Category />} />
+        <Route path="search/:search" element={<SearchPage />} />
+         <Route path="about" element={<About />} />
+         <Route path="contact" element={<Contact/>} />
+         
+      </Route>
+
+      <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
       <Route
         path="deshboard"
@@ -56,18 +70,7 @@ export default function Routing() {
         <Route path="addseting" element={<AddSeting/>} />
         <Route path="addicone" element={<AddIcone/>} />
       </Route>
-      <Route path="home" element={<FrontendLayout />}>
-        <Route path="main" element={<MainContent />}/>
-        <Route path="show/:id" element={<BlogPage />}/>
-        <Route path="header" element={<Header />} />
-        <Route path="footer" element={<Footer />} />
-        <Route path="all" element={<AllArticles />} />
-        <Route path="nev/:category" element={<Category />} />
-        <Route path="search/:search" element={<SearchPage />} />
-         <Route path="about" element={<About />} />
-         <Route path="contact" element={<Contact/>} />
-         
-      </Route>
+      
     </Routes>
   );
 }

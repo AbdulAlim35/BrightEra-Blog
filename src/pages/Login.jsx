@@ -14,12 +14,12 @@ function Login() {
   } = useForm();
   const navigate = useNavigate();
   const { isAuth, setAuth } = useTheme();
-   let peramData=useLocation();
+   
   
   useEffect(() => {
   
     if (isAuth) {
-     navigate(peramData.state,{replace:true});
+     navigate("/deshboard/das",{replace:true});
      
     }
   }, [isAuth]);

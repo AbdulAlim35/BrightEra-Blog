@@ -39,7 +39,7 @@ function Category() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {category?.toUpperCase()}
+              {category.charAt(0).toUpperCase() + category.slice(1)}
             </h1>
           </div>
         </div>
@@ -63,8 +63,8 @@ function Category() {
                     </div>
                     <div className="md:w-2/3 p-6">
                       <div className="flex items-center mb-3">
-                        <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded uppercase">
-                          {data.category}
+                        <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ">
+                          {data.category?.charAt(0).toUpperCase() + data.category.slice(1)}
                         </span>
                         <span className="text-gray-500 text-sm ml-3">
                           {new Date(data?.$createdAt).toLocaleDateString(
@@ -77,10 +77,10 @@ function Category() {
                           )}
                         </span>
                       </div>
-                      <h2 class="text-2xl font-bold mb-3 text-blue-900">
+                      <h2 className="text-2xl font-bold mb-3 text-blue-900">
                         <Link
-                          to={"/home/show/" + data.$id}
-                          class="hover:text-blue-600 transition-colors line-clamp-1"
+                          to={"/show/" + data.$id}
+                          className="hover:text-blue-600 transition-colors line-clamp-1"
                         >
                           {data.title}
                         </Link>
@@ -122,7 +122,7 @@ function Category() {
                 {categoryId.map(([name, count], index) => (
                   <li key={index}>
                     <Link
-                      to={`/home/nev/${name}`}
+                      to={`/nev/${name}`}
                       className="text-blue-900 hover:text-blue-600 flex justify-between items-center py-1 font-medium"
                     >
                       <span>
@@ -150,7 +150,7 @@ function Category() {
                       className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
                     />
                     <div>
-                      <Link to={"/home/show/" + data.$id}>
+                      <Link to={"/show/" + data.$id}>
                         <h4 className="text-sm font-medium text-gray-900 hover:text-blue-600 leading-tight mb-1 line-clamp-1">
                           {data.title}
                         </h4>

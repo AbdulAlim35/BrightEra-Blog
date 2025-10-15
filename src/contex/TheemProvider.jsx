@@ -9,7 +9,7 @@ export const ThemeContext = createContext();
 const TheemProvider = ({ children }) => {
   const [isAuth, setAuth] = useState(false);
   const [authInfo, setAuthInfo] = useState([]);
-  const [imageId, setImageId] = useState(null);
+  const [imageId, setImageId] = useState(false);
   const [categoryId, setCategoryId] = useState([]);
    const [logo, setLogo] = useState([]);
    const [icone, setIcone] = useState([]);
@@ -17,7 +17,6 @@ const TheemProvider = ({ children }) => {
     const userData = await authService.getAccount();
     let profileData = await profileDatabas.listQuery(userData.$id);
     setImageId(profileData?.documents[0]?.imageId ?? null);
-
     setAuthInfo(userData);
   };
 

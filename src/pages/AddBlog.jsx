@@ -47,7 +47,7 @@ function AddBlog() {
       if (data.status == "draft") {
   navigate("/deshboard/das")
  }else if (data.status == "published") {
-  navigate("/home/main")
+  navigate("/main")
   
   
  }
