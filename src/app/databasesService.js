@@ -104,7 +104,6 @@ export class DatabasesService {
         slug
       );
     } catch (error) {
-      throw error;
     }
   }
     async oneQuery () {
