@@ -17,7 +17,7 @@ function Register() {
     delete data.confirm_password;
     const sent = await authService.cerateAccount(data);
     reset();
-    navigate("/");
+    navigate("login");
   };
 
   return (
@@ -184,7 +184,7 @@ function Register() {
                 <p className="text-sm text-gray-600">
                   Already have an account?
                   <Link
-                    to={"/"}
+                    to={"login"}
                     className="font-medium text-blue-600 hover:text-blue-500 ml-1"
                   >
                     Login
@@ -196,7 +196,7 @@ function Register() {
 
           <div className="text-center">
             <p className="text-xs text-gray-500">
-              © 2024 Capritech. All rights reserved.
+              © 2025 brightEra. All rights reserved.
             </p>
           </div>
         </form>

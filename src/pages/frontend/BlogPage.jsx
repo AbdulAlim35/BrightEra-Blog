@@ -67,8 +67,8 @@ function BlogPage() {
             </h1>
 
             <div className="flex items-center mb-6">
-              <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full uppercase">
-                {post?.category}
+              <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full ">
+                {post?.category?.charAt(0).toUpperCase()+ post?.category?.slice(1)}
               </span>
               <span className="text-gray-500 text-sm ml-4">
                 {" "}
@@ -111,7 +111,7 @@ function BlogPage() {
               {categoryId.map(([name, count], index) => (
                 <li key={index}>
                   <Link
-                    to={`/home/nev/${name}`}
+                    to={`/nev/${name}`}
                     className="text-blue-900 hover:text-blue-600 flex justify-between items-center py-1 font-medium"
                   >
                     <span>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
@@ -137,7 +137,7 @@ function BlogPage() {
                     className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
                   />
                   <div>
-                    <Link to={"/home/show/" + data.$id}>
+                    <Link to={"/show/" + data.$id}>
                       <h4 className="text-sm font-medium text-gray-900 hover:text-blue-600 leading-tight mb-1 line-clamp-1">
                         {data.title}
                       </h4>

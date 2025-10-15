@@ -60,14 +60,14 @@ function MainContent() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to={"/home/about"}
-                  class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                  to={"/about"}
+                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
                 >
                   About us
                 </Link>
                 <Link
-                  to={"/home/contact"}
-                  class=" flex items-center justify-end border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer"
+                  to={"/contact"}
+                  className=" flex items-center justify-end border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer"
                 >
                   <FaMapMarkerAlt />
                   Get in Touch
@@ -99,8 +99,8 @@ function MainContent() {
 
                 <div className="md:w-1/2 p-8  ">
                   <div className="flex items-center mb-4">
-                    <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded uppercase">
-                      {heihlight.category}
+                    <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ">
+                      {heihlight.category?.charAt(0).toUpperCase() + heihlight.category?.slice(1)}
                     </span>
                     <span className="text-gray-500 text-sm ml-4 ">
                       {new Date(heihlight.$createdAt).toLocaleDateString(
@@ -113,10 +113,10 @@ function MainContent() {
                       )}
                     </span>
                   </div>
-                  <h2 class="text-2xl font-bold mb-3 text-blue-900">
+                  <h2 className="text-2xl font-bold mb-3 text-blue-900">
                     <Link
-                      to={"/home/show/" + heihlight.$id}
-                      class="hover:text-blue-600 transition-colors line-clamp-1 "
+                      to={"/show/" + heihlight.$id}
+                      className="hover:text-blue-600 transition-colors line-clamp-1 "
                     >
                       {heihlight.title}
                     </Link>
@@ -165,8 +165,8 @@ function MainContent() {
                   />
                   <div className="p-6">
                     <div className="flex items-center mb-3">
-                      <span className="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded uppercase">
-                        {data.category}
+                      <span className="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded ">
+                        {data.category?.charAt(0).toUpperCase() + data.category.slice(1)}
                       </span>
                       <span className="text-gray-500 text-sm ml-3">
                         {new Date(data.$createdAt).toLocaleDateString("en-US", {
@@ -176,10 +176,10 @@ function MainContent() {
                         })}
                       </span>
                     </div>
-                    <h2 class="text-2xl font-bold mb-3 text-blue-900">
+                    <h2 className="text-2xl font-bold mb-3 text-blue-900">
                       <Link
-                        to={"/home/show/" + data.$id}
-                        class="hover:text-blue-600 transition-colors line-clamp-1"
+                        to={"/show/" + data.$id}
+                        className="hover:text-blue-600 transition-colors line-clamp-1"
                       >
                         {data.title}
                       </Link>
@@ -208,7 +208,7 @@ function MainContent() {
             {/* <!-- Load More Button --> */}
             <div className="text-center">
               <Link
-                to="/home/all"
+                to="/all"
                 onClick={() => window.scrollTo(0, 0)}
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
               >
@@ -228,7 +228,7 @@ function MainContent() {
                 {categoryId.map(([name, count], index) => (
                   <li key={index}>
                     <Link
-                      to={`/home/nev/${name}`}
+                      to={`/nev/${name}`}
                       className="text-blue-900 hover:text-blue-600 flex justify-between items-center py-1 font-medium"
                     >
                       <span>
@@ -256,7 +256,7 @@ function MainContent() {
                       className="w-16 h-16 object-cover rounded-lg flex-shrink-0"
                     />
                     <div>
-                      <Link to={"/home/show/" + data.$id}>
+                      <Link to={"/show/" + data.$id}>
                         <h4 className="text-sm font-medium text-gray-900 hover:text-blue-600 leading-tight mb-1 line-clamp-1">
                           {data.title}
                         </h4>

@@ -6,10 +6,11 @@ import { useTheme } from "../contex/TheemProvider";
 function Logout() {
   const navigate = useNavigate();
   const {setAuth}=useTheme();
-  const logout = () => {
-    const out = authService.logOut();
-    navigate("/");
+  const logout = async () => {
+    const out = await authService.logOut();
+    navigate("/",{replace:true});
     setAuth(false);
+     localStorage.removeItem("authUser")
   };
   return (
     <button

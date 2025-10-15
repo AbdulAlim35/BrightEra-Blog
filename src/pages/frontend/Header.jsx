@@ -10,7 +10,7 @@ function Header() {
   const onSubmit = async (data) => {
     const search = data.search.trim();
     if (search) {
-      navigate(`/home/search/${search}`);
+      navigate(`/search/${search}`);
     }
     reset();
   };
@@ -26,7 +26,7 @@ function Header() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <NavLink
-                to="/home/main"
+                to="/main"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
@@ -39,7 +39,7 @@ function Header() {
                 Home
               </NavLink>
               <NavLink
-                to="/home/all"
+                to="/all"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
@@ -52,7 +52,7 @@ function Header() {
                 All Ariticles
               </NavLink>
               <NavLink
-                to="/home/nev/technology"
+                to="/nev/technology"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
@@ -65,7 +65,7 @@ function Header() {
                 Technology
               </NavLink>
               <NavLink
-                to="/home/nev/Development"
+                to="/nev/Development"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
@@ -78,7 +78,7 @@ function Header() {
                 Development
               </NavLink>
               <NavLink
-                to="/home/about"
+                to="/about"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
@@ -91,7 +91,7 @@ function Header() {
                 About
               </NavLink>
               <NavLink
-                to="/home/contact"
+                to="/contact"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${

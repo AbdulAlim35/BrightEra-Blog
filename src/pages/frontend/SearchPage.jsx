@@ -48,8 +48,8 @@ function SearchPage() {
                     </div>
                     <div className="md:w-2/3 p-6">
                       <div className="flex items-center mb-3">
-                        <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded uppercase">
-                          {data.category}
+                        <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ">
+                          {data.category?.charAt(0).toUpperCase() + data.category.slice(1)}
                         </span>
                         <span className="text-gray-500 text-sm ml-3">
                           {new Date(data?.$createdAt).toLocaleDateString(
@@ -64,7 +64,7 @@ function SearchPage() {
                       </div>
                       <h2 className="text-2xl font-bold mb-3 text-blue-900">
                         <Link
-                          to={"/home/show/" + data.$id}
+                          to={"/show/" + data.$id}
                           className="hover:text-blue-600 transition-colors line-clamp-1"
                         >
                           {data.title}
@@ -121,21 +121,21 @@ function SearchPage() {
             {/* <!-- Search Filters --> */}
 
             {/* <!-- Categories -->  */}
-            <div classNameName="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
-              <h3 classNameName="text-lg font-semibold mb-4 text-blue-900">
+            <div className="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
+              <h3 className="text-lg font-semibold mb-4 text-blue-900">
                 Categories
               </h3>
-              <ul classNameName="space-y-2">
+              <ul className="space-y-2">
                 {categoryId.map(([name, count], index) => (
                   <li key={index}>
                     <Link
-                      to={`/home/nev/${name}`}
-                      classNameName="text-blue-900 hover:text-blue-600 flex justify-between items-center py-1 font-medium"
+                      to={`/nev/${name}`}
+                      className="text-blue-900 hover:text-blue-600 flex justify-between items-center py-1 font-medium"
                     >
                       <span>
                         {name.charAt(0).toUpperCase() + name.slice(1)}
                       </span>
-                      <span classNameName="text-sm text-gray-400">{count}</span>
+                      <span className="text-sm text-gray-400">{count}</span>
                     </Link>
                   </li>
                 ))}
