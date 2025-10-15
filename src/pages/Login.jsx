@@ -30,7 +30,7 @@ function Login() {
       reset();
        localStorage.setItem("authUser", JSON.stringify(true))
       
-     navigate("/deshboard/add-blog");
+     navigate("/deshboard/das");
 
     
     }

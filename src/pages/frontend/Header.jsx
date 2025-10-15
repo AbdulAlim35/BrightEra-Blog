@@ -16,7 +16,7 @@ function Header() {
   };
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="max-w-7xl mx-auto  sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold text-primary-600">
@@ -29,7 +29,7 @@ function Header() {
                 to="/home/main"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 inline-block transition-all duration-200 ${
+                  `relative py-2 inline-block transition-all duration-200 ${
                     isActive
                       ? "text-blue-500  font-bold after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
                       : "text-gray-500 font-medium hover:text-blue-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300"
@@ -42,7 +42,7 @@ function Header() {
                 to="/home/all"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 inline-block transition-all duration-200 ${
+                  `relative py-2 inline-block transition-all duration-200 ${
                     isActive
                       ? "text-blue-500 font-bold after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
                       : "text-gray-500 font-medium hover:text-blue-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300"
@@ -55,7 +55,7 @@ function Header() {
                 to="/home/nev/technology"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 inline-block transition-all duration-200 ${
+                  `relative py-2 inline-block transition-all duration-200 ${
                     isActive
                       ? "text-blue-500 font-bold  after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
                       : "text-gray-500 font-medium hover:text-blue-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300"
@@ -68,7 +68,7 @@ function Header() {
                 to="/home/nev/Development"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 inline-block transition-all duration-200 ${
+                  `relative py-2 inline-block transition-all duration-200 ${
                     isActive
                       ? "text-blue-500 font-bold after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
                       : "text-gray-500 font-medium hover:text-blue-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300"
@@ -81,7 +81,7 @@ function Header() {
                 to="/home/about"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 inline-block transition-all duration-200 ${
+                  `relative py-2 inline-block transition-all duration-200 ${
                     isActive
                       ? "text-blue-500 font-bold after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
                       : "text-gray-500 font-medium hover:text-blue-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300"
@@ -94,7 +94,7 @@ function Header() {
                 to="/home/contact"
                   onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 inline-block transition-all duration-200 ${
+                  `relative py-2 inline-block transition-all duration-200 ${
                     isActive
                       ? "text-blue-500 font-bold after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-100 after:origin-left after:transition-transform after:duration-300"
                       : "text-gray-500 font-medium hover:text-blue-600 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-blue-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300"
@@ -112,8 +112,8 @@ function Header() {
                 <input
                   id="search"
                   type="text"
-                  placeholder="Search..."
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder=" Search..."
+                  className="py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   {...register("search")}
                 />
               </div>

@@ -10,7 +10,9 @@ function AddBlog() {
     const navigate = useNavigate()
   
     useEffect(()=>{
-      featchData(id);     
+      if (id) {
+      featchData();
+    }   
     },[id]);
 
   const { register, handleSubmit, watch, setValue, reset } = useForm();

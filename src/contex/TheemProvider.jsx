@@ -75,7 +75,7 @@ const TheemProvider = ({ children }) => {
     logo,
     icone,
   };
-  return <ThemeContext value={dataList}>{children}</ThemeContext>;
+  return <ThemeContext.Provider value={dataList}>{children}</ThemeContext.Provider>;
 };
 export default TheemProvider;
 

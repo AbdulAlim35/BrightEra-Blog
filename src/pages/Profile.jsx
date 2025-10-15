@@ -48,7 +48,6 @@ function Profile() {
   };
   const handleImage = async (e) => {
     const selectedFile = e.target.files[0];
-
     if (!selectedFile) return;
     setLoding(true);
     try {
