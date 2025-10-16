@@ -17,7 +17,7 @@ function Register() {
     delete data.confirm_password;
     const sent = await authService.cerateAccount(data);
     reset();
-    navigate("login");
+    navigate("/login");
   };
 
   return (
@@ -184,7 +184,7 @@ function Register() {
                 <p className="text-sm text-gray-600">
                   Already have an account?
                   <Link
-                    to={"login"}
+                    to={"/login"}
                     className="font-medium text-blue-600 hover:text-blue-500 ml-1"
                   >
                     Login

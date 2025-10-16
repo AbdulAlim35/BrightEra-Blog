@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useTheme } from "../../contex/TheemProvider";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 function Header() {
   const { register, handleSubmit, reset } = useForm();
+  const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();
   const { logo } = useTheme();
   const onSubmit = async (data) => {
@@ -13,6 +15,10 @@ function Header() {
       navigate(`/search/${search}`);
     }
     reset();
+  };
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+    setOpen(false);
   };
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -26,8 +32,8 @@ function Header() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <NavLink
-                to="/main"
-                  onClick={() => window.scrollTo(0, 0)}
+                to="/"
+                onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
                     isActive
@@ -40,7 +46,7 @@ function Header() {
               </NavLink>
               <NavLink
                 to="/all"
-                  onClick={() => window.scrollTo(0, 0)}
+                onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
                     isActive
@@ -53,7 +59,7 @@ function Header() {
               </NavLink>
               <NavLink
                 to="/nev/technology"
-                  onClick={() => window.scrollTo(0, 0)}
+                onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
                     isActive
@@ -66,7 +72,7 @@ function Header() {
               </NavLink>
               <NavLink
                 to="/nev/Development"
-                  onClick={() => window.scrollTo(0, 0)}
+                onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
                     isActive
@@ -79,7 +85,7 @@ function Header() {
               </NavLink>
               <NavLink
                 to="/about"
-                  onClick={() => window.scrollTo(0, 0)}
+                onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
                     isActive
@@ -92,7 +98,7 @@ function Header() {
               </NavLink>
               <NavLink
                 to="/contact"
-                  onClick={() => window.scrollTo(0, 0)}
+                onClick={() => window.scrollTo(0, 0)}
                 className={({ isActive }) =>
                   `relative py-2 inline-block transition-all duration-200 ${
                     isActive
@@ -120,24 +126,68 @@ function Header() {
             </div>
           </form>
           <div className="md:hidden">
-            <button className="text-gray-500 hover:text-gray-900 focus:outline-none">
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+            <button
+              className="text-gray-500 text-2xl hover:text-gray-900 focus:outline-none"
+              onClick={() => setOpen(!isOpen)}
+            >
+              <RxHamburgerMenu />
             </button>
           </div>
         </div>
       </nav>
+      {isOpen && (
+        <div
+          id="mobile-menu"
+          className={`md:hidden bg-white border-t overflow-hidden transition-all duration-700 ease-in-out ${
+            isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            <NavLink
+              onClick={() => handleClick("/")}
+              to="/"
+              className="block px-3 py-2 text-gray-700 "
+            >
+              Home
+            </NavLink>
+            <NavLink
+              onClick={() => handleClick("/all")}
+              to="/all"
+              className="block px-3 py-2 text-gray-700 "
+            >
+              All Ariticles
+            </NavLink>
+            <NavLink
+              onClick={() => handleClick("/nev/technology")}
+              to="/nev/technology"
+              className="block px-3 py-2 text-gray-700 "
+            >
+              Technology
+            </NavLink>
+            <NavLink
+              onClick={() => handleClick("/nev/Development")}
+              to="/nev/Development"
+              className="block px-3 py-2 text-gray-700 "
+            >
+              Development
+            </NavLink>
+            <NavLink
+              onClick={() => handleClick("/about")}
+              to="/about"
+              className="block px-3 py-2 text-gray-700 "
+            >
+              About
+            </NavLink>
+            <NavLink
+              onClick={() => handleClick("/contact")}
+              to="/contact"
+              className="block px-3 py-2  text-gray-700"
+            >
+              Contact
+            </NavLink>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
