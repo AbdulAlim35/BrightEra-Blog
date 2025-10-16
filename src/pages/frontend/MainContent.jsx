@@ -67,7 +67,7 @@ function MainContent() {
                 </Link>
                 <Link
                   to={"/contact"}
-                  className=" flex items-center justify-end border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer"
+                  className=" flex items-center md:justify-end justify-center border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors cursor-pointer"
                 >
                   <FaMapMarkerAlt />
                   Get in Touch
